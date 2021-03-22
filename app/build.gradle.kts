@@ -24,7 +24,7 @@ android {
         }
     }
     compileOptions {
-        coreLibraryDesugaringEnabled = true
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
@@ -36,6 +36,9 @@ android {
 
     buildFeatures {
         viewBinding = true
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
@@ -60,6 +63,6 @@ dependencies {
     implementation(Deps.AndroidX.lifecycle_viewmodel_extensions)
     implementation(Deps.AndroidX.lifecycle_livedata)
     implementation(Deps.AndroidX.lifecycle_extension)
-    implementation(Deps.AndroidX.koin_viewmodel)
+    implementation(Deps.AndroidX.koin_android)
     testImplementation(Deps.junit)
 }
